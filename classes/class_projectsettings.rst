@@ -195,6 +195,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_await<class_ProjectSettings_property_debug/gdscript/warnings/redundant_await>`                                                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_for_variable_type<class_ProjectSettings_property_debug/gdscript/warnings/redundant_for_variable_type>`                                                             | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_static_unload<class_ProjectSettings_property_debug/gdscript/warnings/redundant_static_unload>`                                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/renamed_in_godot_4_hint<class_ProjectSettings_property_debug/gdscript/warnings/renamed_in_godot_4_hint>`                                                                     | ``1``                                                                                            |
@@ -2550,6 +2552,18 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 ----
 
+.. _class_ProjectSettings_property_debug/gdscript/warnings/redundant_for_variable_type:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/redundant_for_variable_type** = ``1``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a ``for`` variable type specifier is a supertype of the inferred type.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/redundant_static_unload:
 
 .. rst-class:: classref-property
@@ -4270,7 +4284,7 @@ If ``true``, snaps :ref:`Control<class_Control>` node vertices to the nearest pi
 
 :ref:`bool<class_bool>` **gui/common/swap_cancel_ok**
 
-If ``true``, swaps **Cancel** and **OK** buttons in dialogs on Windows and UWP to follow interface conventions. :ref:`DisplayServer.get_swap_cancel_ok<class_DisplayServer_method_get_swap_cancel_ok>` can be used to query whether buttons are swapped at run-time.
+If ``true``, swaps **Cancel** and **OK** buttons in dialogs on Windows to follow interface conventions. :ref:`DisplayServer.get_swap_cancel_ok<class_DisplayServer_method_get_swap_cancel_ok>` can be used to query whether buttons are swapped at run-time.
 
 \ **Note:** This doesn't affect native dialogs such as the ones spawned by :ref:`DisplayServer.dialog_show<class_DisplayServer_method_dialog_show>`.
 
@@ -11089,8 +11103,8 @@ Adds a custom property info to a property. The dictionary must contain:
     var propertyInfo = new Godot.Collections.Dictionary
     {
         {"name", "category/propertyName"},
-        {"type", Variant.Type.Int},
-        {"hint", PropertyHint.Enum},
+        {"type", (int)Variant.Type.Int},
+        {"hint", (int)PropertyHint.Enum},
         {"hint_string", "one,two,three"},
     };
     

@@ -467,6 +467,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/code_complete_enabled<class_EditorSettings_property_text_editor/completion/code_complete_enabled>`                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/colorize_suggestions<class_EditorSettings_property_text_editor/completion/colorize_suggestions>`                                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/complete_file_paths<class_EditorSettings_property_text_editor/completion/complete_file_paths>`                                                         |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`     | :ref:`text_editor/completion/idle_parse_delay<class_EditorSettings_property_text_editor/completion/idle_parse_delay>`                                                               |
@@ -1083,7 +1085,7 @@ The grid division bias to use in the 3D editor. Negative values will cause small
 
 :ref:`int<class_int>` **editors/3d/grid_division_level_max**
 
-The largest grid division to use in the 3D editor. Together with :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>`, this determines how large the grid divisions can be. The grid divisions will not be able to get larger than ``primary_grid_steps ^ grid_division_level_max`` units. By default, when :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>` is ``8``, this means grid divisions cannot get larger than ``64`` uints each (so primary grid lines are ``512`` uints apart), no matter how far away the camera is from the grid.
+The largest grid division to use in the 3D editor. Together with :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>`, this determines how large the grid divisions can be. The grid divisions will not be able to get larger than ``primary_grid_steps ^ grid_division_level_max`` units. By default, when :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>` is ``8``, this means grid divisions cannot get larger than ``64`` units each (so primary grid lines are ``512`` units apart), no matter how far away the camera is from the grid.
 
 .. rst-class:: classref-item-separator
 
@@ -3220,6 +3222,18 @@ The delay in seconds after which autocompletion suggestions should be displayed 
 :ref:`bool<class_bool>` **text_editor/completion/code_complete_enabled**
 
 If ``true``, code completion will be triggered automatically after :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>`. If ``false``, you can still trigger completion manually by pressing :kbd:`Ctrl + Space` (:kbd:`Cmd + Space` on macOS).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/colorize_suggestions:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/completion/colorize_suggestions**
+
+If ``true`` enables the coloring for some items in the autocompletion suggestions, like vector components.
 
 .. rst-class:: classref-item-separator
 
