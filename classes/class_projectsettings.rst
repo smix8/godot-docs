@@ -231,6 +231,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unsafe_void_return<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_void_return>`                                                                               | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/untyped_declaration<class_ProjectSettings_property_debug/gdscript/warnings/untyped_declaration>`                                                                             | ``0``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unused_local_constant<class_ProjectSettings_property_debug/gdscript/warnings/unused_local_constant>`                                                                         | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unused_parameter<class_ProjectSettings_property_debug/gdscript/warnings/unused_parameter>`                                                                                   | ``1``                                                                                            |
@@ -1513,6 +1515,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/enabled<class_ProjectSettings_property_xr/openxr/enabled>`                                                                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`xr/openxr/environment_blend_mode<class_ProjectSettings_property_xr/openxr/environment_blend_mode>`                                                                                                   | ``"0"``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/form_factor<class_ProjectSettings_property_xr/openxr/form_factor>`                                                                                                                         | ``"0"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/reference_space<class_ProjectSettings_property_xr/openxr/reference_space>`                                                                                                                 | ``"1"``                                                                                          |
@@ -1631,6 +1635,8 @@ If ``true``, scale the boot splash image to the full window size (preserving the
 Path to an image used as the boot splash. If left empty, the default Godot Engine splash will be displayed instead.
 
 \ **Note:** Only effective if :ref:`application/boot_splash/show_image<class_ProjectSettings_property_application/boot_splash/show_image>` is ``true``.
+
+\ **Note:** The only supported format is PNG. Using another image format will result in an error.
 
 .. rst-class:: classref-item-separator
 
@@ -2761,6 +2767,18 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 :ref:`int<class_int>` **debug/gdscript/warnings/unsafe_void_return** = ``1``
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when returning a call from a ``void`` function when such call cannot be guaranteed to be also ``void``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/untyped_declaration:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/untyped_declaration** = ``0``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a variable or parameter has no static type, or if a function has no static return type.
 
 .. rst-class:: classref-item-separator
 
@@ -4270,7 +4288,7 @@ If ``true``, snaps :ref:`Control<class_Control>` node vertices to the nearest pi
 
 :ref:`bool<class_bool>` **gui/common/swap_cancel_ok**
 
-If ``true``, swaps **Cancel** and **OK** buttons in dialogs on Windows and UWP to follow interface conventions. :ref:`DisplayServer.get_swap_cancel_ok<class_DisplayServer_method_get_swap_cancel_ok>` can be used to query whether buttons are swapped at run-time.
+If ``true``, swaps **Cancel** and **OK** buttons in dialogs on Windows to follow interface conventions. :ref:`DisplayServer.get_swap_cancel_ok<class_DisplayServer_method_get_swap_cancel_ok>` can be used to query whether buttons are swapped at run-time.
 
 \ **Note:** This doesn't affect native dialogs such as the ones spawned by :ref:`DisplayServer.dialog_show<class_DisplayServer_method_dialog_show>`.
 
@@ -10973,6 +10991,18 @@ If ``true`` Godot will setup and initialize OpenXR on startup.
 
 ----
 
+.. _class_ProjectSettings_property_xr/openxr/environment_blend_mode:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **xr/openxr/environment_blend_mode** = ``"0"``
+
+Specify how OpenXR should blend in the environment. This is specific to certain AR and passthrough devices where camera images are blended in by the XR compositor.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_xr/openxr/form_factor:
 
 .. rst-class:: classref-property
@@ -11089,8 +11119,8 @@ Adds a custom property info to a property. The dictionary must contain:
     var propertyInfo = new Godot.Collections.Dictionary
     {
         {"name", "category/propertyName"},
-        {"type", Variant.Type.Int},
-        {"hint", PropertyHint.Enum},
+        {"type", (int)Variant.Type.Int},
+        {"hint", (int)PropertyHint.Enum},
         {"hint_string", "one,two,three"},
     };
     
