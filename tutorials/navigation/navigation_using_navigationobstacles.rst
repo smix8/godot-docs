@@ -44,7 +44,7 @@ A NavigationObstacle is considered dynamic when its ``radius`` property is great
 - Dynamic obstacles are not a reliable way to constrain agents in crowded or narrow spaces.
 
 While both static and dynamic properties can be active at the same time on the same obstacle this is not recommended for performance.
-Ideally when an obstacle is moving the static vertices are removed and instead the radius activated. When the obstacle reaches the new final position it should gradually enlarge its radius to push all other agents away. With enough created save space around the obstacle it should add the static vertices again and remove the radius. This helps to avoid getting agents stuck in the suddenly appearing static obstacle when the rebuild static boundary is finished.
+Ideally when an obstacle is moving the static vertices are removed and instead the radius activated. When the obstacle reaches the new final position it should gradually enlarge its radius to push all other agents away. With enough created safe space around the obstacle it should add the static vertices again and remove the radius. This helps to avoid getting agents stuck in the suddenly appearing static obstacle when the rebuild static boundary is finished.
 
 Similar to agents the obstacles can make use of the ``avoidance_layers`` bitmask.
 All agents with a matching bit on their own avoidance mask will avoid the obstacle.

@@ -64,9 +64,9 @@ and the NavigationMesh bake settings that appear in the editor inspector.
 
 NavigationMesh baking is the process of creating a simplified mesh used for pathfinding out of (complex) 3D level geometry.
 For this process Godot parses scene geometry and hands the raw mesh or collision data to the
-third-party ReCast library for processing and creation of the final navigationmesh.
+third-party ReCast library for processing and creation of the final navigation mesh.
 
-The resulting NavigationMesh is an approximation of the source geometry surfaces
+The resulting navigation mesh is an approximation of the source geometry surfaces
 for both performance and technical reasons. Do not expect the NavigationMesh
 to perfectly follow the original surfaces. Especially navigation polygons placed
 over ramps will not keep an equal distance to the ground surface. To align an
@@ -126,14 +126,14 @@ provides an extensive amount of parameters to bake a navigation mesh directly fr
 
 .. note::
 
-    Technically there is no hard distinction between 2D and 3D how to use the given toolsets to create flat navigation meshes. The 2D drawing tool can be used to create a flat 3D navmesh and the 3D baking tool can be used to parse flat 3D geometry into 2D appropriated navigationmeshes.
+    Technically there is no hard distinction between 2D and 3D how to use the given toolsets to create flat navigation meshes. The 2D drawing tool can be used to create a flat 3D navmesh and the 3D baking tool can be used to parse flat 3D geometry into 2D appropriated navigation meshes.
 
 2D Navmesh from CollisionPolygons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following script parses all child nodes of a NavigationRegion2D for CollisionPolygons
 and bakes their shape into the NavigationPolygon. As the NavigationPolygon creates the
-navigationmesh from outline data the shapes cannot overlap.
+navigation mesh from outline data the shapes cannot overlap.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

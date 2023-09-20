@@ -37,7 +37,7 @@ Debug navigation mesh polygons
 ------------------------------
 
 If ``enable_edge_lines`` is enabled the edges of navigation mesh polygons will be highlighted.
-If ``enable_edge_lines_xray`` is also enabled the edges of navigationmeshes will be visible through geometry.
+If ``enable_edge_lines_xray`` is also enabled the edges of navigation meshes will be visible through geometry.
 
 if ``enable_geometry_face_random_color`` is enabled each navigation mesh face receives 
 a random color that is mixed with the main color from ``geometry_face_color``.

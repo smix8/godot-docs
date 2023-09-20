@@ -9,9 +9,9 @@ A typical example for different area access in gameplay are doors that connect r
 with different navigation meshes and are not accessible by all actors all the time.
 
 Add a NavigationRegion at the door position.
-Add an appropriated navigationmesh the size of the door that can connect with the surrounding navigationmeshes.
+Add an appropriated navigation mesh the size of the door that can connect with the surrounding navigation meshes.
 In order to control access enable / disable navigation layer bits so path queries 
-that use the same navigation layer bits can find a path through the "door" navigationmesh.
+that use the same navigation layer bits can find a path through the "door" navigation mesh.
 
 The bitmask can act as a set of door keys or abilities and only actors with at least 
 one matching and enabled bit layer in their pathfinding query will find a path through this region.

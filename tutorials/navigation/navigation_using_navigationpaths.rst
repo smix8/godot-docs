@@ -7,7 +7,7 @@ Obtaining a Navigationpath
 --------------------------
 
 Navigation paths can be directly queried from the NavigationServer and do not require any
-additional nodes or objects as long as the navigation map has a navigationmesh to work with.
+additional nodes or objects as long as the navigation map has a navigation mesh to work with.
 
 To obtain a 2D path, use ``NavigationServer2D.map_get_path(map, from, to, optimize, navigation_layers)``.
 
@@ -23,7 +23,7 @@ The second and third parameters are the starting position and the target positio
 
 If the ``optimized`` parameter is ``true``, path positions will be shortened along polygon
 corners with an additional funnel algorithm pass. This works well for free movement
-on navigationmeshes with unequal sized polygons as the path will hug around corners
+on navigation meshes with unequal sized polygons as the path will hug around corners
 along the polygon corridor found by the A* algorithm. With small cells the A* algorithm
 creates a very narrow funnel corridor that can create ugly corner paths when used with grids.
 
@@ -65,8 +65,8 @@ Outside of grids due to polygons often covering large open areas with a single, 
 A returned ``path`` by the NavigationServer will be a ``PackedVector2Array`` for 2D or a ``PackedVector3Array`` for 3D.
 These are just a memory-optimized ``Array`` of vector positions.
 All position vectors inside the array are guaranteed to be inside a NavigationPolygon or NavigationMesh.
-The path array, if not empty, has the navigationmesh position closest to the starting position at the first index ``path[0]`` position.
-The closest available navigationmesh position to the target position is the last index ``path[path.size()-1]`` position.
+The path array, if not empty, has the navigation mesh position closest to the starting position at the first index ``path[0]`` position.
+The closest available navigation mesh position to the target position is the last index ``path[path.size()-1]`` position.
 All index between are the pathpoints that an actor should follow to reach the target without leaving the navigation mesh.
 
 .. note::

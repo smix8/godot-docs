@@ -11,7 +11,7 @@ and :ref:`NavigationRegion3D<class_NavigationRegion3D>` over arbitrary distances
 NavigationLinks are also used to consider movement shortcuts in pathfinding available through 
 interacting with gameplay objects e.g. ladders, jump pads or teleports.
 
-2D and 3D versions of NavigationJumplinks nodes are available as 
+2D and 3D versions of NavigationLink nodes are available as 
 :ref:`NavigationLink2D<class_NavigationLink2D>` and 
 :ref:`NavigationLink3D<class_NavigationLink3D>` respectively.
 
