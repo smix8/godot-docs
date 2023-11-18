@@ -160,7 +160,7 @@ Particles are drawn in the order emitted.
 
 :ref:`DrawOrder<enum_GPUParticles2D_DrawOrder>` **DRAW_ORDER_LIFETIME** = ``1``
 
-Particles are drawn in order of remaining lifetime.
+Particles are drawn in order of remaining lifetime. In other words, the particle with the highest lifetime is drawn at the front.
 
 .. _class_GPUParticles2D_constant_DRAW_ORDER_REVERSE_LIFETIME:
 
@@ -168,7 +168,7 @@ Particles are drawn in order of remaining lifetime.
 
 :ref:`DrawOrder<enum_GPUParticles2D_DrawOrder>` **DRAW_ORDER_REVERSE_LIFETIME** = ``2``
 
-
+Particles are drawn in reverse order of remaining lifetime. In other words, the particle with the lowest lifetime is drawn at the front.
 
 .. rst-class:: classref-item-separator
 
@@ -384,7 +384,7 @@ If ``true``, results in fractional delta calculation which has a smoother partic
 
 Causes all the particles in this node to interpolate towards the end of their lifetime.
 
-\ **Note**: This only works when used with a :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>`. It needs to be manually implemented for custom process shaders.
+\ **Note:** This only works when used with a :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>`. It needs to be manually implemented for custom process shaders.
 
 .. rst-class:: classref-item-separator
 
