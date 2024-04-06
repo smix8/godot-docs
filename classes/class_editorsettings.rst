@@ -221,6 +221,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/tiles_editor/grid_color<class_EditorSettings_property_editors/tiles_editor/grid_color>`                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`editors/tiles_editor/highlight_selected_layer<class_EditorSettings_property_editors/tiles_editor/highlight_selected_layer>`                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/visual_editors/category_colors/color_color<class_EditorSettings_property_editors/visual_editors/category_colors/color_color>`                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/visual_editors/category_colors/conditional_color<class_EditorSettings_property_editors/visual_editors/category_colors/conditional_color>`                                                           |
@@ -368,6 +370,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/update_continuously<class_EditorSettings_property_interface/editor/update_continuously>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/use_embedded_menu<class_EditorSettings_property_interface/editor/use_embedded_menu>`                                                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/editor/use_native_file_dialogs<class_EditorSettings_property_interface/editor/use_native_file_dialogs>`                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/vsync_mode<class_EditorSettings_property_interface/editor/vsync_mode>`                                                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -562,6 +566,10 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/navigation/stay_in_script_editor_on_node_selected<class_EditorSettings_property_text_editor/behavior/navigation/stay_in_script_editor_on_node_selected>`                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`text_editor/behavior/navigation/v_scroll_speed<class_EditorSettings_property_text_editor/behavior/navigation/v_scroll_speed>`                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/completion/add_node_path_literals<class_EditorSettings_property_text_editor/completion/add_node_path_literals>`                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/completion/add_string_name_literals<class_EditorSettings_property_text_editor/completion/add_string_name_literals>`                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/completion/add_type_hints<class_EditorSettings_property_text_editor/completion/add_type_hints>`                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1777,6 +1785,18 @@ The color to use for the TileMap editor's grid.
 
 ----
 
+.. _class_EditorSettings_property_editors/tiles_editor/highlight_selected_layer:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/tiles_editor/highlight_selected_layer**
+
+Highlight the currently selected TileMapLayer by dimming the other ones in the scene.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_editors/visual_editors/category_colors/color_color:
 
 .. rst-class:: classref-property
@@ -2748,6 +2768,18 @@ If ``true``, redraws the editor every frame even if nothing has changed on scree
 If ``true``, editor main menu is using embedded :ref:`MenuBar<class_MenuBar>` instead of system global menu.
 
 Specific to the macOS platform.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/use_native_file_dialogs:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/use_native_file_dialogs**
+
+If ``true``, editor UI uses OS native file/directory selection dialogs.
 
 .. rst-class:: classref-item-separator
 
@@ -3964,6 +3996,30 @@ If ``true``, prevents automatically switching between the Script and 2D/3D scree
 The number of pixels to scroll with every mouse wheel increment. Higher values make the script scroll by faster when using the mouse wheel.
 
 \ **Note:** You can hold down :kbd:`Alt` while using the mouse wheel to temporarily scroll 5 times faster.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/add_node_path_literals:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/completion/add_node_path_literals**
+
+If ``true``, uses :ref:`NodePath<class_NodePath>` instead of :ref:`String<class_String>` when appropriate for code autocompletion or for drag and dropping object properties into the script editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/add_string_name_literals:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/completion/add_string_name_literals**
+
+If ``true``, uses :ref:`StringName<class_StringName>` instead of :ref:`String<class_String>` when appropriate for code autocompletion.
 
 .. rst-class:: classref-item-separator
 
